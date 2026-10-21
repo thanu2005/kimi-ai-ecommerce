@@ -118,8 +118,6 @@ Important pieces:
 
 ## Graph Diagram
 
-![Agent orchestration reference sketch](docs/graph-diagram-reference.png)
-
 ```mermaid
 flowchart TD
     Start([START]) --> Guard[guard]
