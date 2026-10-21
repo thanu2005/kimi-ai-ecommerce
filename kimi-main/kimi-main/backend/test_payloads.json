@@ -1,0 +1,219 @@
+{
+  "payloads": [
+    {
+      "label": "1 — Full Operational Health Check",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Run a full operational health check. Check inventory stock levels for all products and flag any below safety stock. Check sales GMV and payment gateway failure rates. Audit all marketing campaign ROAS and flag any below 1.0. Review support ticket spikes and check for Checkout_Error clusters. Propose concrete remediation actions for every critical finding.",
+        "thread_id": "health-check-001"
+      }
+    },
+    {
+      "label": "2 — Inventory Stockout Emergency",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Focus only on inventory. Check stock status for all products. Identify any product with physical_stock at or below safety_stock_level and no active PO. Check incoming supplier orders and flag products with lead times over 14 days. Propose emergency restock actions for all critical SKUs.",
+        "thread_id": "inventory-check-001"
+      }
+    },
+    {
+      "label": "3 — Marketing ROAS Optimisation",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Audit all active marketing campaigns. Identify campaigns with ROAS below 1.0 that should be paused to stop budget burn. Identify campaigns with ROAS above 5.0 and budget utilisation below 80% that should have their budgets increased. Propose specific budget adjustments and pause actions with exact campaign IDs.",
+        "thread_id": "marketing-check-001"
+      }
+    },
+    {
+      "label": "4 — Payment Gateway & Sales Anomaly",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Investigate sales anomalies. Check hourly order volume for time gaps where zero orders were placed. Check payment gateway performance and flag any gateway with failure rate above 5%. Get device breakdown and flag any device type with failure rate above 8%. Correlate with support ticket data for checkout errors.",
+        "thread_id": "sales-check-001"
+      }
+    },
+    {
+      "label": "5 — Customer Support Escalation Triage",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Focus on customer support health. Check ticket metrics for today. Flag any category with more than 30% share. Search for checkout-related complaints and surface customer-reported error messages. Check fulfillment delay analysis to see if carrier delays are generating complaints. If systemic checkout errors are confirmed, propose creating a priority engineering ticket.",
+        "thread_id": "support-check-001"
+      }
+    },
+    {
+      "label": "6 — Cross-Domain Revenue Leak Investigation",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Investigate a suspected revenue leak. Payment gateway stripe_v3 has been flagged. Get payment gateway performance and correlate failures with hourly order volume drops. Check whether support tickets for checkout errors spiked at the same time. Check if the affected products had campaigns running during that window. Quantify the estimated GMV impact and propose corrective actions.",
+        "thread_id": "revenue-leak-001"
+      }
+    },
+    {
+      "label": "7 — Supplier Lead Time Risk Assessment",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Assess supplier lead time risk across all inventory. For every product that has a pending supplier order, check the lead time in days against current stock days-of-cover. Flag any product where stock will hit zero before the order arrives. Also check if any of those at-risk products have active marketing campaigns that could accelerate depletion. Propose safety stock threshold updates and emergency restocks where needed.",
+        "thread_id": "supplier-risk-001"
+      }
+    },
+    {
+      "label": "8 — End-of-Day Sales Reconciliation",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Run an end-of-day sales reconciliation. Get the hourly order volume breakdown for today and identify any hours below the daily average by more than 40%. Get payment gateway performance and report total transaction count and failure count per gateway. Get device-level breakdown and report conversion rate by device type. Flag any anomalies versus what would be expected on a typical Monday.",
+        "thread_id": "eod-reconciliation-001"
+      }
+    },
+    {
+      "label": "9 — Marketing Budget Reallocation",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Perform a marketing budget reallocation analysis. Get all active campaigns and rank them by ROAS descending. Identify the bottom 3 performers with ROAS below 1.5 and calculate total budget that would be freed by pausing them. Identify the top 3 performers with budget utilisation below 70% that could absorb that freed budget. Propose specific pause and budget increase actions with exact amounts.",
+        "thread_id": "budget-realloc-001"
+      }
+    },
+    {
+      "label": "10 — Negative Sentiment Product Investigation",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Investigate products receiving negative customer sentiment. Search support ticket sentiments and identify products with average sentiment score below -0.5. For each such product, get the return reasons breakdown. Cross-reference with inventory to check if negative sentiment is correlated with any recent restocking or supplier change. Propose actions including support ticket escalation or safety stock adjustment if quality issues are detected.",
+        "thread_id": "negative-sentiment-001"
+      }
+    },
+    {
+      "label": "11 — Flash Sale Readiness Check",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Assess operational readiness for a flash sale planned for tomorrow. Check current stock levels for all products and flag any with fewer than 50 units. Check payment gateway failure rates and flag any gateway above 3% that could bottleneck checkout volume. Check if support team is currently overwhelmed by reviewing open ticket count and average resolution time. Propose pre-sale restock and gateway fallback actions.",
+        "thread_id": "flash-sale-readiness-001"
+      }
+    },
+    {
+      "label": "12 — Weekly Campaign Performance Review",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Run a weekly campaign performance review. Get all campaigns regardless of status. For completed campaigns, calculate ROI and flag any that exceeded budget by more than 10%. For active campaigns, compare spend-to-date against expected weekly pacing. Identify campaigns that are underpacing by more than 30% — they may need creative refresh. Propose budget adjustments and flag any campaigns to pause or scale.",
+        "thread_id": "weekly-campaign-review-001"
+      }
+    },
+    {
+      "label": "13 — Fulfillment Delay Impact Analysis",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Analyse the impact of fulfillment delays on customer satisfaction. Get fulfillment delay analysis and identify the carriers and regions with delays above 3 days. Correlate with support tickets — check if delay-affected regions show higher ticket volume for 'late delivery' complaints. Check if any delayed products are also running active marketing campaigns that are generating new orders into an already-delayed pipeline. Propose actions to mitigate.",
+        "thread_id": "fulfillment-delay-001"
+      }
+    },
+    {
+      "label": "14 — Safety Stock Calibration",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Calibrate safety stock thresholds across the product catalog. For each product, compare current safety_stock_level against recent average daily sales velocity derived from order data. Flag any product where the current threshold is below 7 days of cover. Also flag products where the threshold is excessively high (above 30 days cover), tying up capital unnecessarily. Propose updated safety stock thresholds for both under- and over-provisioned products.",
+        "thread_id": "safety-stock-calibration-001"
+      }
+    },
+    {
+      "label": "15 — Checkout Error Root Cause Analysis",
+      "endpoint": "POST /api/run",
+      "body": {
+        "query": "Today is 2026-06-06. Perform a root cause analysis on checkout errors reported today. Query historical incident vectors similar to 'checkout payment failure' to find past patterns. Get payment gateway performance to confirm which gateways are failing today. Search support ticket sentiments for checkout-related complaints filed in the last 24 hours. Correlate ticket creation timestamps with payment gateway failure spikes. Propose a priority engineering ticket if a systemic pattern is confirmed.",
+        "thread_id": "checkout-rca-001"
+      }
+    }
+  ],
+  "resume_examples": [
+    {
+      "label": "Resume — Approve inventory restock only",
+      "endpoint": "POST /api/resume",
+      "body": {
+        "thread_id": "health-check-001",
+        "run_id": "<use run_id from /api/run response>",
+        "approved_actions": [
+          {
+            "action": "restock_product_emergency",
+            "reason": "PROD-GC-010 is below safety stock with no active PO and 18-day lead time.",
+            "params": {
+              "product_id": "PROD-GC-010",
+              "quantity": 20
+            }
+          }
+        ]
+      }
+    },
+    {
+      "label": "Resume — Approve marketing budget adjustments only",
+      "endpoint": "POST /api/resume",
+      "body": {
+        "thread_id": "marketing-check-001",
+        "run_id": "<use run_id from /api/run response>",
+        "approved_actions": [
+          {
+            "action": "adjust_campaign_budget",
+            "reason": "CAMP-TT-908 has 17.88x ROAS with headroom to scale.",
+            "params": {
+              "campaign_id": "CAMP-TT-908",
+              "new_budget": 250
+            }
+          },
+          {
+            "action": "adjust_campaign_budget",
+            "reason": "CAMP-TT-907 exhausted budget with 6.0x ROAS.",
+            "params": {
+              "campaign_id": "CAMP-TT-907",
+              "new_budget": 75
+            }
+          }
+        ]
+      }
+    },
+    {
+      "label": "Resume — Approve all proposed actions",
+      "endpoint": "POST /api/resume",
+      "body": {
+        "thread_id": "health-check-001",
+        "run_id": "<use run_id from /api/run response>",
+        "approved_actions": [
+          {
+            "action": "restock_product_emergency",
+            "reason": "PROD-GC-010 below safety stock, no PO, 18-day lead time.",
+            "params": {
+              "product_id": "PROD-GC-010",
+              "quantity": 20
+            }
+          },
+          {
+            "action": "adjust_campaign_budget",
+            "reason": "CAMP-TT-908 exceptional ROAS with budget headroom.",
+            "params": {
+              "campaign_id": "CAMP-TT-908",
+              "new_budget": 250
+            }
+          },
+          {
+            "action": "adjust_campaign_budget",
+            "reason": "CAMP-TT-907 budget exhausted with healthy ROAS.",
+            "params": {
+              "campaign_id": "CAMP-TT-907",
+              "new_budget": 75
+            }
+          },
+          {
+            "action": "pause_marketing_campaign",
+            "reason": "Campaign with ROAS below 1.0 burning budget with no return.",
+            "params": {
+              "campaign_id": "CAMP-GG-901"
+            }
+          },
+          {
+            "action": "update_safety_stock_trigger",
+            "reason": "Raise safety stock threshold to prevent future stockout on high-velocity SKU.",
+            "params": {
+              "product_id": "PROD-GC-010",
+              "new_threshold": 15
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

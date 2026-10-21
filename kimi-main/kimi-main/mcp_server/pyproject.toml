@@ -1,0 +1,36 @@
+[project]
+name = "ecommerce-ops-mcp-server"
+version = "0.1.0"
+description = "FastMCP tool server for the AI E-Commerce Operations Brain"
+requires-python = ">=3.11"
+
+dependencies = [
+    # ── MCP transport ─────────────────────────────────────────────────────
+    "fastmcp>=2.0.0",
+    "uvicorn[standard]>=0.30.0",
+    # ── Database / ORM (tools query Postgres directly) ───────────────────
+    "sqlmodel>=0.0.21",
+    "sqlalchemy[asyncio]>=2.0.0",
+    "asyncpg>=0.29.0",
+    # ── Vector DB (support tools query Qdrant) ───────────────────────────
+    "qdrant-client>=1.11.0",
+    # ── Embeddings used by long-term memory retrieval ─────────────────────
+    "langchain-openai>=0.3.0",
+    # ── Config / env loading ──────────────────────────────────────────────
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+# Expose mcp_server package so imports work when this project is installed
+packages = ["mcp_server"]
+
+[tool.uv]
+# The backend app.* source (models, session, config) lives in ../backend.
+# We add it to the path at runtime via sys.path in server.py — no package
+# install needed for that source code, only its runtime dependencies above.

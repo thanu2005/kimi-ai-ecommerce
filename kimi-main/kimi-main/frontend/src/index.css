@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ───────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Annie Use Your Telescope', cursive;
+    background-color: #f9fbff;
+    color: #241a0f;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ── Paper grain overlay ────────────────────────────────── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cfc5b7;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7e766a;
+}
+
+/* ── Prose overrides for react-markdown ────────────────── */
+.kimi-prose {
+  line-height: 1.75;
+  font-size: 1rem;
+}
+.kimi-prose h1, .kimi-prose h2, .kimi-prose h3 {
+  font-weight: 700;
+  margin-top: 1em;
+  margin-bottom: 0.4em;
+  color: #241a0f;
+}
+.kimi-prose h1 { font-size: 1.3rem; }
+.kimi-prose h2 { font-size: 1.15rem; }
+.kimi-prose h3 { font-size: 1rem; }
+.kimi-prose p {
+  margin-bottom: 0.6em;
+}
+.kimi-prose ul, .kimi-prose ol {
+  padding-left: 1.4em;
+  margin-bottom: 0.6em;
+}
+.kimi-prose li {
+  margin-bottom: 0.2em;
+}
+.kimi-prose code {
+  background: #ffead9;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.88em;
+  font-family: 'Courier New', monospace;
+}
+.kimi-prose pre {
+  background: #fae5d3;
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 0.8em;
+}
+.kimi-prose pre code {
+  background: transparent;
+  padding: 0;
+}
+.kimi-prose strong {
+  font-weight: 700;
+}
+.kimi-prose blockquote {
+  border-left: 3px solid #cfc5b7;
+  padding-left: 1em;
+  color: #4d463b;
+  margin: 0.5em 0;
+}
+.kimi-prose table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 0.8em;
+  font-size: 0.9rem;
+}
+.kimi-prose th, .kimi-prose td {
+  border: 1px solid #cfc5b7;
+  padding: 0.3em 0.6em;
+  text-align: left;
+}
+.kimi-prose th {
+  background: #fae5d3;
+  font-weight: 700;
+}

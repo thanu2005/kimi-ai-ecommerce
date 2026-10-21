@@ -1,0 +1,58 @@
+[project]
+name = "ecommerce-ops-brain-backend"
+version = "0.1.0"
+description = "AI E-Commerce Operations Brain — FastAPI + LangGraph backend"
+requires-python = ">=3.11"
+
+dependencies = [
+    # ── Web / API layer ───────────────────────────────────────────────────
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    # ── Database / ORM ────────────────────────────────────────────────────
+    "sqlmodel>=0.0.21",
+    "sqlalchemy[asyncio]>=2.0.0",
+    "asyncpg>=0.29.0",                        # async PostgreSQL driver
+    # ── Agent engine ──────────────────────────────────────────────────────
+    "langchain>=0.3.0",
+    "langchain-openai>=0.2.0",
+    "langchain-community>=0.3.0",
+    "langgraph>=0.2.0",
+    "langgraph-checkpoint-postgres>=2.0.0",   # AsyncPostgresSaver for HITL
+    # ── MCP tool layer ────────────────────────────────────────────────────
+    "fastmcp>=2.0.0",
+    "langchain-mcp-adapters>=0.1.0",
+    # ── Vector DB ─────────────────────────────────────────────────────────
+    "qdrant-client>=1.11.0",
+    # ── Observability ─────────────────────────────────────────────────────
+    "langsmith>=0.1.0",
+    "opentelemetry-sdk>=1.25.0",
+    "opentelemetry-exporter-otlp>=1.25.0",
+    # ── Utilities ─────────────────────────────────────────────────────────
+    "python-dotenv>=1.0.0",
+    "psycopg[binary]>=3.3.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    # ── Evaluation / Testing ──────────────────────────────────────────────
+    "deepeval>=1.0.0",
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "httpx>=0.27.0",                          # async test client for FastAPI
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+# uv reads dev-dependencies from [project.optional-dependencies] automatically.
+# Run `uv sync --extra dev` to include test/eval packages.
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
